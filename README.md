@@ -9,7 +9,7 @@ Note: You dont need to build and link these dependencies, see below.
 
 # Building (Windows)
 First you're gonna need vcpkg to install and link the dependencies (Miniaudio and TagLib), technically you could also build and link yourself but this way is easier (and also I havent tested that last bit).
-The easiest way to ude vcpkg is to use the copy that comes by default with Visual Studio (I use 2022) and making sure you're installing the vcpkg component (It should be enabled by default when you select "Desktop developement with C++" in the installer settings, but just to be sure check if the "vcpkg project manager" component is checked)
+The easiest way to use vcpkg is to use the copy that comes by default with Visual Studio (I use 2022) and making sure you're installing the vcpkg component (It should be enabled by default when you select "Desktop developement with C++" in the installer settings, but just to be sure check if the "vcpkg project manager" component is checked)
 
 Then clone this project and run "vcpkg install" on the developer terminal, note that probably you will also need to run the vcpkg configuration (I dont know if its needed since this project also contains the vcpkg's manifest file, but just a heads up)
 
