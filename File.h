@@ -6,6 +6,7 @@ namespace SAP {
 	{
 	public:
 		File(String^ filePath);
+		~File();
 
 		String^ getArtist();
 		String^ getAlbum();
@@ -15,48 +16,39 @@ namespace SAP {
 			String^ get() {
 				return title;
 			}
-
-			void set(String^ val) {}
 		}
 
 		property String^ Artist {
 			String^ get() {
 				return artist;
 			}
-
-			void set(String^ val) {}
 		}
 
 		property String^ Album {
 			String^ get() {
 				return album;
 			}
-
-			void set(String^ val) {}
 		}
 
 		property String^ Duration {
 			String^ get() {
-				return gcnew String((getMinutes() < 10 ? ("0" + getMinutes().ToString()) : getMinutes().ToString()) + ":" + (getSeconds() < 10 ? ("0" + getSeconds().ToString()) : getSeconds().ToString()));
+				return gcnew String(getMinutes().ToString()->PadLeft(2, L'0')) + ":" + (getSeconds().ToString()->PadLeft(2, L'0'));
 			}
-
-			void set(String^ val) {}
 		}
 
 		int getSeconds();
 		int getMinutes();
 
-		String^ ToString() override;
-
 		String^ getFilePath();
-
-		bool getIsValid();
-
 		String^ getDetailedInfo();
 
 		System::Drawing::Image^ tryGetImage();
 
+		bool getIsValid();
+
 		void getLyricsSynced(LRCService::Lyrics^ lyricsObj);
+
+		String^ ToString() override;
 
 	private:
 		bool isValid = true;

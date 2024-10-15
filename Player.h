@@ -6,15 +6,9 @@
 #include "miniaudio.h"
 #include <msclr/marshal_cppstd.h>
 
-void data_callback(ma_device* pDevice, void* pOutput, const void* pInput, ma_uint32 frameCount)
-{
-	ma_data_source_read_pcm_frames((ma_data_source*)pDevice->pUserData, pOutput, frameCount, NULL);
-
-	(void)pInput;
-}
-
 namespace SAP {
 	using namespace System;
+	using namespace System::Diagnostics;
 	ref class Player
 	{
 	public:
@@ -25,14 +19,14 @@ namespace SAP {
 
 			*result = ma_engine_init(NULL, engine);
 			if (*result != MA_SUCCESS) {
-				Diagnostics::Debug::WriteLine("MA: ER: Failed to initialize audio engine.");
+				Debug::WriteLine("MA: ER: Failed to initialize audio engine.");
 				engineIsValid = false;
 				return;
 			}
 
 			engineIsValid = true;
 
-			Diagnostics::Debug::WriteLine("MA: OK: Audio engine initialized!");
+			Debug::WriteLine("MA: OK: Audio engine initialized!");
 		};
 
 
@@ -48,29 +42,29 @@ namespace SAP {
 			}
 			*result = ma_sound_init_from_file_w(engine, msclr::interop::marshal_as<std::wstring>(path).c_str(), MA_SOUND_FLAG_ASYNC | MA_SOUND_FLAG_STREAM, NULL, NULL, sound);
 			if (*result != MA_SUCCESS) {
-				Diagnostics::Debug::WriteLine("MA: ER: Failed to load file.");
+				Debug::WriteLine("MA: ER: Failed to load file.");
 				fileIsValid = false;
 				return;
 			}
 
-			Diagnostics::Debug::WriteLine("MA: OK: File loaded!");
+			Debug::WriteLine("MA: OK: File loaded!");
 			fileIsValid = true;
 		};
 
 		void play() {
 			*result = ma_sound_start(sound);
 			if (*result != MA_SUCCESS) {
-				Diagnostics::Debug::WriteLine("MA: ER: Failed start.");
+				Debug::WriteLine("MA: ER: Failed start.");
 			}
-			Diagnostics::Debug::WriteLine("MA: OK: Start!");
+			Debug::WriteLine("MA: OK: Start!");
 		}
 
 		void pause() {
 			*result = ma_sound_stop(sound);
 			if (*result != MA_SUCCESS) {
-				Diagnostics::Debug::WriteLine("MA: ER: Failed to stop.");
+				Debug::WriteLine("MA: ER: Failed to stop.");
 			}
-			Diagnostics::Debug::WriteLine("MA: OK: Pause!");
+			Debug::WriteLine("MA: OK: Pause!");
 		}
 
 		bool paused() {
@@ -123,10 +117,10 @@ namespace SAP {
 		void setVolume(float vol) {
 			*result = ma_engine_set_volume(engine, vol);
 			if (*result != MA_SUCCESS) {
-				Diagnostics::Debug::WriteLine("MA: ER: Failed to set volume!");
+				Debug::WriteLine("MA: ER: Failed to set volume!");
 			}
 
-			Diagnostics::Debug::WriteLine("MA: OK: New volume set!");
+			Debug::WriteLine("MA: OK: New volume set!");
 		}
 
 	private:

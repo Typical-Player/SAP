@@ -14,24 +14,16 @@ namespace SAP {
 	using namespace System::Data;
 	using namespace System::Drawing;
 
-	/// <summary>
-	/// Summary for Form1
-	/// </summary>
 	public ref class Form1 : public System::Windows::Forms::Form
 	{
 	public:
 		Form1(void)
 		{
 			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			//		
 		}
 
 	protected:
-		/// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
+
 		~Form1()
 		{
 			if (components)
@@ -40,7 +32,6 @@ namespace SAP {
 			}
 		}
 	private: System::Windows::Forms::MenuStrip^ menuStrip1;
-	protected:
 	private: System::Windows::Forms::ToolStripMenuItem^ fileToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ quickImportToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ settingsToolStripMenuItem;
@@ -65,11 +56,9 @@ namespace SAP {
 	private: System::Windows::Forms::Splitter^ splitter1;
 	private: System::Windows::Forms::Button^ shuffleToggleBtn;
 	private: System::Windows::Forms::Button^ repeatToggleBtn;
-
 	private: System::Windows::Forms::TrackBar^ audioVolumeSlider;
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel7;
 	private: System::Windows::Forms::PictureBox^ songPicBox;
-
 	private: System::Windows::Forms::DataGridView^ songListGridView;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ songListColumnTitle;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ songListColumnArtist;
@@ -78,42 +67,28 @@ namespace SAP {
 	private: System::Windows::Forms::TabControl^ songInfoTabCtrl;
 	private: System::Windows::Forms::TabPage^ tabPageSongLyrics;
 	private: System::Windows::Forms::TabPage^ tabPageSongInfo;
-
-
-
-
-
 	private: System::Windows::Forms::TextBox^ tabSongInfoTxtBox;
-
 	private: System::Windows::Forms::Timer^ seekBarUpdate;
 	private: System::Windows::Forms::FlowLayoutPanel^ flowLayoutPanel2;
 	private: System::Windows::Forms::Label^ songCurrentTimeLabel;
 	private: System::Windows::Forms::Label^ songTotalTimeLabel;
 	private: System::Windows::Forms::ListBox^ songLRCList;
 	private: System::Windows::Forms::Timer^ lyricsUpdateTimer;
-
-
-
-
 	private: System::ComponentModel::IContainer^ components;
-	private:
-		/// <summary>
-		/// Required designer variable.
-		/// </summary>
-
-
 #pragma region Windows Form Designer generated code
-		/// <summary>
-		/// Required method for Designer support - do not modify
-		/// the contents of this method with the code editor.
-		/// </summary>;
-		/// 
+	private:
+		System::Drawing::Color baseColor;
+		System::Drawing::Color shadeDarkColor;
+		System::Drawing::Color shadeDarkerColor;
+
+		   System::Drawing::Color txtColor;
+
 		void InitializeComponent(void)
 		{
 			this->components = (gcnew System::ComponentModel::Container());
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Form1::typeid));
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle2 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle3 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle4 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->fileToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->quickImportToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -206,26 +181,26 @@ namespace SAP {
 			// quickImportToolStripMenuItem
 			// 
 			this->quickImportToolStripMenuItem->Name = L"quickImportToolStripMenuItem";
-			this->quickImportToolStripMenuItem->Size = System::Drawing::Size(143, 22);
+			this->quickImportToolStripMenuItem->Size = System::Drawing::Size(144, 22);
 			this->quickImportToolStripMenuItem->Text = L"Quick Import";
 			this->quickImportToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::quickImportToolStripMenuItem_Click);
 			// 
 			// settingsToolStripMenuItem
 			// 
 			this->settingsToolStripMenuItem->Name = L"settingsToolStripMenuItem";
-			this->settingsToolStripMenuItem->Size = System::Drawing::Size(143, 22);
+			this->settingsToolStripMenuItem->Size = System::Drawing::Size(144, 22);
 			this->settingsToolStripMenuItem->Text = L"Settings";
 			this->settingsToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::settingsToolStripMenuItem_Click);
 			// 
 			// toolStripSeparator2
 			// 
 			this->toolStripSeparator2->Name = L"toolStripSeparator2";
-			this->toolStripSeparator2->Size = System::Drawing::Size(140, 6);
+			this->toolStripSeparator2->Size = System::Drawing::Size(141, 6);
 			// 
 			// exitToolStripMenuItem
 			// 
 			this->exitToolStripMenuItem->Name = L"exitToolStripMenuItem";
-			this->exitToolStripMenuItem->Size = System::Drawing::Size(143, 22);
+			this->exitToolStripMenuItem->Size = System::Drawing::Size(144, 22);
 			this->exitToolStripMenuItem->Text = L"Exit";
 			this->exitToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::exitToolStripMenuItem_Click);
 			// 
@@ -238,7 +213,7 @@ namespace SAP {
 			});
 			this->sAPSimpleAudioPlayerToolStripMenuItem->ForeColor = System::Drawing::Color::White;
 			this->sAPSimpleAudioPlayerToolStripMenuItem->Name = L"sAPSimpleAudioPlayerToolStripMenuItem";
-			this->sAPSimpleAudioPlayerToolStripMenuItem->Size = System::Drawing::Size(156, 20);
+			this->sAPSimpleAudioPlayerToolStripMenuItem->Size = System::Drawing::Size(157, 20);
 			this->sAPSimpleAudioPlayerToolStripMenuItem->Text = L"SAP (Simple Audio Player)";
 			this->sAPSimpleAudioPlayerToolStripMenuItem->DropDownClosed += gcnew System::EventHandler(this, &Form1::sAPSimpleAudioPlayerToolStripMenuItem_DropDownClosed);
 			this->sAPSimpleAudioPlayerToolStripMenuItem->DropDownOpened += gcnew System::EventHandler(this, &Form1::sAPSimpleAudioPlayerToolStripMenuItem_DropDownOpened);
@@ -411,7 +386,8 @@ namespace SAP {
 			// 
 			// previousButton
 			// 
-			this->previousButton->BackColor = System::Drawing::Color::Transparent;
+			this->previousButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(29)), static_cast<System::Int32>(static_cast<System::Byte>(29)),
+				static_cast<System::Int32>(static_cast<System::Byte>(29)));
 			this->previousButton->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"previousButton.BackgroundImage")));
 			this->previousButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->previousButton->FlatAppearance->BorderSize = 0;
@@ -427,7 +403,8 @@ namespace SAP {
 			// 
 			// playButton
 			// 
-			this->playButton->BackColor = System::Drawing::Color::Transparent;
+			this->playButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(29)), static_cast<System::Int32>(static_cast<System::Byte>(29)),
+				static_cast<System::Int32>(static_cast<System::Byte>(29)));
 			this->playButton->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"playButton.BackgroundImage")));
 			this->playButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->playButton->FlatAppearance->BorderSize = 0;
@@ -443,7 +420,8 @@ namespace SAP {
 			// 
 			// nextButton
 			// 
-			this->nextButton->BackColor = System::Drawing::Color::Transparent;
+			this->nextButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(29)), static_cast<System::Int32>(static_cast<System::Byte>(29)),
+				static_cast<System::Int32>(static_cast<System::Byte>(29)));
 			this->nextButton->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"nextButton.BackgroundImage")));
 			this->nextButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->nextButton->FlatAppearance->BorderSize = 0;
@@ -468,7 +446,8 @@ namespace SAP {
 			// 
 			// shuffleToggleBtn
 			// 
-			this->shuffleToggleBtn->BackColor = System::Drawing::Color::Transparent;
+			this->shuffleToggleBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(29)), static_cast<System::Int32>(static_cast<System::Byte>(29)),
+				static_cast<System::Int32>(static_cast<System::Byte>(29)));
 			this->shuffleToggleBtn->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"shuffleToggleBtn.BackgroundImage")));
 			this->shuffleToggleBtn->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->shuffleToggleBtn->FlatAppearance->BorderSize = 0;
@@ -484,7 +463,8 @@ namespace SAP {
 			// 
 			// repeatToggleBtn
 			// 
-			this->repeatToggleBtn->BackColor = System::Drawing::Color::Transparent;
+			this->repeatToggleBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(29)), static_cast<System::Int32>(static_cast<System::Byte>(29)),
+				static_cast<System::Int32>(static_cast<System::Byte>(29)));
 			this->repeatToggleBtn->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"repeatToggleBtn.BackgroundImage")));
 			this->repeatToggleBtn->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->repeatToggleBtn->FlatAppearance->BorderSize = 0;
@@ -514,7 +494,8 @@ namespace SAP {
 			this->songCurrentTimeLabel->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->songCurrentTimeLabel->ForeColor = System::Drawing::Color::White;
+			this->songCurrentTimeLabel->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(29)),
+				static_cast<System::Int32>(static_cast<System::Byte>(29)), static_cast<System::Int32>(static_cast<System::Byte>(29)));
 			this->songCurrentTimeLabel->Location = System::Drawing::Point(0, 0);
 			this->songCurrentTimeLabel->Margin = System::Windows::Forms::Padding(0);
 			this->songCurrentTimeLabel->Name = L"songCurrentTimeLabel";
@@ -525,7 +506,8 @@ namespace SAP {
 			// 
 			// songTotalTimeLabel
 			// 
-			this->songTotalTimeLabel->ForeColor = System::Drawing::Color::White;
+			this->songTotalTimeLabel->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(29)),
+				static_cast<System::Int32>(static_cast<System::Byte>(29)), static_cast<System::Int32>(static_cast<System::Byte>(29)));
 			this->songTotalTimeLabel->Location = System::Drawing::Point(80, 0);
 			this->songTotalTimeLabel->Margin = System::Windows::Forms::Padding(0);
 			this->songTotalTimeLabel->Name = L"songTotalTimeLabel";
@@ -635,6 +617,7 @@ namespace SAP {
 			this->songLRCList->FormattingEnabled = true;
 			this->songLRCList->IntegralHeight = false;
 			this->songLRCList->Location = System::Drawing::Point(0, 0);
+			this->songLRCList->Margin = System::Windows::Forms::Padding(5);
 			this->songLRCList->Name = L"songLRCList";
 			this->songLRCList->Size = System::Drawing::Size(242, 103);
 			this->songLRCList->TabIndex = 0;
@@ -679,33 +662,33 @@ namespace SAP {
 			this->songListGridView->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->songListGridView->CellBorderStyle = System::Windows::Forms::DataGridViewCellBorderStyle::SingleVertical;
 			this->songListGridView->ColumnHeadersBorderStyle = System::Windows::Forms::DataGridViewHeaderBorderStyle::None;
-			dataGridViewCellStyle1->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)), static_cast<System::Int32>(static_cast<System::Byte>(10)),
-				static_cast<System::Int32>(static_cast<System::Byte>(10)));
-			dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			dataGridViewCellStyle3->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(25)));
+			dataGridViewCellStyle3->Font = (gcnew System::Drawing::Font(L"Segoe UI", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			dataGridViewCellStyle1->ForeColor = System::Drawing::Color::White;
-			dataGridViewCellStyle1->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(60)),
-				static_cast<System::Int32>(static_cast<System::Byte>(60)), static_cast<System::Int32>(static_cast<System::Byte>(60)));
-			dataGridViewCellStyle1->SelectionForeColor = System::Drawing::Color::White;
-			dataGridViewCellStyle1->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-			this->songListGridView->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+			dataGridViewCellStyle3->ForeColor = System::Drawing::Color::White;
+			dataGridViewCellStyle3->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(16)),
+				static_cast<System::Int32>(static_cast<System::Byte>(16)), static_cast<System::Int32>(static_cast<System::Byte>(16)));
+			dataGridViewCellStyle3->SelectionForeColor = System::Drawing::Color::White;
+			dataGridViewCellStyle3->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->songListGridView->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
 			this->songListGridView->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->songListGridView->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(4) {
 				this->songListColumnTitle,
 					this->songListColumnArtist, this->songColumnListAlbum, this->songColumnListDuration
 			});
-			dataGridViewCellStyle2->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(25)),
+			dataGridViewCellStyle4->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(25)),
 				static_cast<System::Int32>(static_cast<System::Byte>(25)));
-			dataGridViewCellStyle2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			dataGridViewCellStyle4->Font = (gcnew System::Drawing::Font(L"Segoe UI", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			dataGridViewCellStyle2->ForeColor = System::Drawing::Color::White;
-			dataGridViewCellStyle2->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(50)),
-				static_cast<System::Int32>(static_cast<System::Byte>(50)), static_cast<System::Int32>(static_cast<System::Byte>(50)));
-			dataGridViewCellStyle2->SelectionForeColor = System::Drawing::Color::White;
-			dataGridViewCellStyle2->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
-			this->songListGridView->DefaultCellStyle = dataGridViewCellStyle2;
+			dataGridViewCellStyle4->ForeColor = System::Drawing::Color::White;
+			dataGridViewCellStyle4->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(16)),
+				static_cast<System::Int32>(static_cast<System::Byte>(16)), static_cast<System::Int32>(static_cast<System::Byte>(16)));
+			dataGridViewCellStyle4->SelectionForeColor = System::Drawing::Color::White;
+			dataGridViewCellStyle4->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
+			this->songListGridView->DefaultCellStyle = dataGridViewCellStyle4;
 			this->songListGridView->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->songListGridView->GridColor = System::Drawing::Color::White;
 			this->songListGridView->Location = System::Drawing::Point(0, 0);
@@ -769,8 +752,8 @@ namespace SAP {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(10)), static_cast<System::Int32>(static_cast<System::Byte>(10)),
-				static_cast<System::Int32>(static_cast<System::Byte>(10)));
+			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)), static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(25)));
 			this->ClientSize = System::Drawing::Size(1084, 497);
 			this->Controls->Add(this->tableLayoutPanel1);
 			this->Controls->Add(this->menuStrip1);
@@ -785,7 +768,6 @@ namespace SAP {
 			this->ShowIcon = false;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"SAP (Simple Audio Player)";
-			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
 			this->tableLayoutPanel1->ResumeLayout(false);
@@ -864,105 +846,224 @@ namespace SAP {
 		   bool repeatActive = false;
 		   bool loading = false;
 		   bool folderLoaded = false;
+		   int currentTheme = 0;
 
-	private:
+		   System::Void quickImportToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 
-		System::Void quickImportToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+			   if (folderLoaded)
+			   {
+				   System::Windows::Forms::MessageBox::Show("You already have a folder selected! Reopen the app to select another folder", "Folder already loaded", System::Windows::Forms::MessageBoxButtons::OK);
+				   return;
+			   }
 
-			if (folderLoaded)
-			{
-				System::Windows::Forms::MessageBox::Show("You already have a folder selected! Reopen the app to select another folder", "Folder already loaded", System::Windows::Forms::MessageBoxButtons::OK);
-				return;
-			}
+			   folderDialog = gcnew System::Windows::Forms::FolderBrowserDialog();
+			   if (folderDialog->ShowDialog() == System::Windows::Forms::DialogResult::OK && folderDialog->SelectedPath != "")
+			   {
+				   array<String^>^ files = System::IO::Directory::GetFiles(folderDialog->SelectedPath);
 
-			folderDialog = gcnew System::Windows::Forms::FolderBrowserDialog();
-			if (folderDialog->ShowDialog() == System::Windows::Forms::DialogResult::OK && folderDialog->SelectedPath != "")
-			{
-				array<String^>^ files = System::IO::Directory::GetFiles(folderDialog->SelectedPath);
+				   System::Collections::Generic::List<SAP::File^>^ li = gcnew System::Collections::Generic::List<SAP::File^>();
 
-				System::Collections::Generic::List<SAP::File^>^ li = gcnew System::Collections::Generic::List<SAP::File^>();
+				   loading = true;
+				   this->songTitleLabel->Text = "Loading...";
+				   for each (String ^ file in files)
+				   {
+					   File^ f = gcnew File(file);
 
-				loading = true;
-				this->songTitleLabel->Text = "Loading...";
-				for each (String ^ file in files)
-				{
-					File^ f = gcnew File(file);
+					   if (f->getIsValid())
+					   {
+						   li->Add(f);
+						   this->songArtistLabel->Text = "File loaded: " + f->getFilePath();
+					   }
+				   }
+				   this->songListGridView->AutoGenerateColumns = false;
+				   this->songListGridView->DataSource = li;
+				   this->songTitleLabel->Text = "Double-click a song to open";
+				   this->songArtistLabel->Text = "";
+				   folderLoaded = true;
+				   loading = false;
+			   }
+		   }
 
-					if (f->getIsValid())
-					{
-						li->Add(f);
-						this->songArtistLabel->Text = "File loaded: " + f->getFilePath();
-					}
-				}
-				this->songListGridView->AutoGenerateColumns = false;
-				this->songListGridView->DataSource = li;
-				this->songTitleLabel->Text = "Double-click a song to open";
-				this->songArtistLabel->Text = "";
-				folderLoaded = true;
-				loading = false;
-			}
-		}
+		   void updateColor(System::Windows::Forms::Control^ c) {
+			   c->BackColor = baseColor;
+			   c->ForeColor = txtColor;
+			   for each (System::Object^ subCtr in c->Controls)
+			   {
+				   auto control = static_cast<System::Windows::Forms::Control^>(subCtr);
+				   if (control != nullptr)
+				   {
+					   updateColor(control);
+				   }
+			   }
+		   }
 
-		int currentTheme = 0;
+		   void updateUnique() {
+			   this->BackColor = shadeDarkColor;
+			   this->tableLayoutPanel4->BackColor = shadeDarkerColor;
+			   this->songTitleLabel->BackColor = shadeDarkerColor;
+			   this->songArtistLabel->BackColor = shadeDarkerColor;
+			   this->songListGridView->BackgroundColor = shadeDarkColor;
+			   System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			   System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle2 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			   dataGridViewCellStyle1->BackColor = shadeDarkColor;
+			   dataGridViewCellStyle1->ForeColor = txtColor;
+			   dataGridViewCellStyle1->SelectionBackColor = shadeDarkerColor;
+			   dataGridViewCellStyle1->SelectionForeColor = txtColor;
+			   this->songListGridView->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+			   dataGridViewCellStyle2->BackColor = shadeDarkColor;
+			   dataGridViewCellStyle2->ForeColor = txtColor;
+			   dataGridViewCellStyle2->SelectionBackColor = shadeDarkerColor;
+			   dataGridViewCellStyle2->SelectionForeColor = txtColor; dataGridViewCellStyle2->ForeColor = txtColor;
+			   dataGridViewCellStyle2->SelectionBackColor = shadeDarkerColor;
+			   dataGridViewCellStyle2->SelectionForeColor = txtColor;
+			   this->songListGridView->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+			   this->songListGridView->DefaultCellStyle = dataGridViewCellStyle2;
+			   this->songListGridView->GridColor = txtColor;
+		   }
 
-		void loadColor(int colorId) {
-			switch (colorId)
-			{
-			case 0:
-				Diagnostics::Debug::WriteLine("Theme 0 loading...");
-				this->BackColor = System::Drawing::Color::FromArgb(10, 10, 10);
-				break;
-			case 1:
-				Diagnostics::Debug::WriteLine("Theme 1 loading...");
-				break;
-			case 2:
-				Diagnostics::Debug::WriteLine("Theme 2 loading...");
-				break;
-			case 3:
-				Diagnostics::Debug::WriteLine("Theme 3 loading...");
-				break;
-			case 4:
-				Diagnostics::Debug::WriteLine("Theme 4 loading...");
-				break;
-			case 5:
-				Diagnostics::Debug::WriteLine("Theme 5 loading...");
-				break;
-			}
-		}
 
-	private: System::Void settingsToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-		SAP::Settings^ settingsForm = gcnew SAP::Settings(currentTheme);
-		settingsForm->ShowDialog();
-		Diagnostics::Debug::WriteLine("MainForm: " + settingsForm->SettingsThemeValue);
-		currentTheme = settingsForm->SettingsThemeValue;
+		   void loadColor(int colorId) {
+			   switch (colorId)
+			   {
+			   case 0:
+				   //Default
+					   Diagnostics::Debug::WriteLine("Theme 0 loading...");
+					   baseColor = System::Drawing::Color::FromArgb(29, 29, 29);
+					   shadeDarkColor = System::Drawing::Color::FromArgb(25, 25, 25);
+					   shadeDarkerColor = System::Drawing::Color::FromArgb(16, 16, 16);
+					   txtColor = System::Drawing::Color::White;
+					   for each (System::Object^ subCtr in this->Controls)
+					   {
+						   auto control = static_cast<System::Windows::Forms::Control^>(subCtr);
+						   if (control != nullptr)
+						   {
+							   updateColor(control);
+						   }
+					   }
+					   updateUnique();
+				   break;
+			   case 1:
+				   //Blue
+					   Diagnostics::Debug::WriteLine("Theme 1 loading...");
+					   baseColor = System::Drawing::Color::FromArgb(60, 90, 120);
+					   shadeDarkColor = System::Drawing::Color::FromArgb(40, 65, 82);
+					   shadeDarkerColor = System::Drawing::Color::FromArgb(20, 35, 42);
+					   txtColor = System::Drawing::Color::White;
+					   for each (System::Object ^ subCtr in this->Controls)
+					   {
+						   auto control = static_cast<System::Windows::Forms::Control^>(subCtr);
+						   if (control != nullptr)
+						   {
+							   updateColor(control);
+						   }
+					   }
+					   updateUnique();
+				   break;
+			   case 2:
+				   //Purple
+				   Diagnostics::Debug::WriteLine("Theme 2 loading...");
+				   baseColor = System::Drawing::Color::FromArgb(100, 70, 135);
+				   shadeDarkColor = System::Drawing::Color::FromArgb(65, 45, 90);
+				   shadeDarkerColor = System::Drawing::Color::FromArgb(30, 20, 40);
+				   txtColor = System::Drawing::Color::White;
 
-		loadColor(currentTheme);
-	}
-	private: System::Void licensesToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-		SAP::Licenses^ licenseForm = gcnew SAP::Licenses;
-		licenseForm->ShowDialog();
-	}
-	private: System::Void aboutSAPToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-		SAP::About^ aboutForm = gcnew SAP::About;
-		aboutForm->ShowDialog();
-	}
+				   for each (System::Object ^ subCtr in this->Controls)
+				   {
+					   auto control = static_cast<System::Windows::Forms::Control^>(subCtr);
+					   if (control != nullptr)
+					   {
+						   updateColor(control);
+					   }
+				   }
+				   updateUnique();
+				   break;
+			   case 3:
+				   //Black
+				   Diagnostics::Debug::WriteLine("Theme 3 loading...");
+				   baseColor = System::Drawing::Color::FromArgb(50, 50, 50);
+				   shadeDarkColor = System::Drawing::Color::FromArgb(35, 35, 35);
+				   shadeDarkerColor = System::Drawing::Color::FromArgb(0, 0, 0);
+				   txtColor = System::Drawing::Color::White;
 
-	private:
-		File^ currentFile;
-		bool isFirst = true;
+				   for each (System::Object ^ subCtr in this->Controls)
+				   {
+					   auto control = static_cast<System::Windows::Forms::Control^>(subCtr);
+					   if (control != nullptr)
+					   {
+						   updateColor(control);
+					   }
+				   }
+				   updateUnique();
+				   break;
+			   case 4:
+				   //White
+				   Diagnostics::Debug::WriteLine("Theme 4 loading...");
+				   baseColor = System::Drawing::Color::FromArgb(180, 180, 180);
+				   shadeDarkColor = System::Drawing::Color::FromArgb(210, 210, 210);
+				   shadeDarkerColor = System::Drawing::Color::FromArgb(255, 255, 255);
+				   txtColor = System::Drawing::Color::Black;
 
-	private: System::Void shuffleToggleBtn_Click(System::Object^ sender, System::EventArgs^ e) {
-		System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Form1::typeid));
-		if (!shuffleActive)
-		{
-			this->shuffleToggleBtn->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"shuffleON")));
-			this->shuffleActive = true;
-		}
-		else {
-			this->shuffleToggleBtn->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"shuffleToggleBtn.BackgroundImage")));
-			this->shuffleActive = false;
-		}
-	}
+				   for each (System::Object ^ subCtr in this->Controls)
+				   {
+					   auto control = static_cast<System::Windows::Forms::Control^>(subCtr);
+					   if (control != nullptr)
+					   {
+						   updateColor(control);
+					   }
+				   }
+				   updateUnique();
+				   break;
+			   case 5:
+				   //Green
+				   Diagnostics::Debug::WriteLine("Theme 5 loading...");
+				   baseColor = System::Drawing::Color::FromArgb(120, 200, 90);
+				   shadeDarkColor = System::Drawing::Color::FromArgb(85, 145, 65);
+				   shadeDarkerColor = System::Drawing::Color::FromArgb(55, 95, 45);
+				   txtColor = System::Drawing::Color::Black;
+
+				   for each (System::Object ^ subCtr in this->Controls)
+				   {
+					   auto control = static_cast<System::Windows::Forms::Control^>(subCtr);
+					   if (control != nullptr)
+					   {
+						   updateColor(control);
+					   }
+				   }
+				   updateUnique();
+				   break;
+			   }
+		   }
+
+		   System::Void settingsToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+			   SAP::Settings^ settingsForm = gcnew SAP::Settings(currentTheme);
+			   settingsForm->ShowDialog();
+			   Diagnostics::Debug::WriteLine("MainForm: " + settingsForm->SettingsThemeValue);
+			   currentTheme = settingsForm->SettingsThemeValue;
+
+			   loadColor(currentTheme);
+		   }
+		   System::Void licensesToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+			   SAP::Licenses^ licenseForm = gcnew SAP::Licenses;
+			   licenseForm->ShowDialog();
+		   }
+		   System::Void aboutSAPToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+			   SAP::About^ aboutForm = gcnew SAP::About;
+			   aboutForm->ShowDialog();
+		   }
+		   File^ currentFile;
+		   bool isFirst = true;
+		   System::Void shuffleToggleBtn_Click(System::Object^ sender, System::EventArgs^ e) {
+			   System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Form1::typeid));
+			   if (!shuffleActive)
+			   {
+				   this->shuffleToggleBtn->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"shuffleON")));
+				   this->shuffleActive = true;
+			   }
+			   else {
+				   this->shuffleToggleBtn->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"shuffleToggleBtn.BackgroundImage")));
+				   this->shuffleActive = false;
+			   }
+		   }
 	private: System::Void repeatToggleBtn_Click(System::Object^ sender, System::EventArgs^ e) {
 		System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Form1::typeid));
 		if (!repeatActive)
@@ -1260,9 +1361,6 @@ namespace SAP {
 		{
 			lyrics->updateActives(player->getTimeInMiliseconds(), this->songLRCList);
 		}
-		//lyrics->updateList(this->songLRCList);
-	}
-	private: System::Void Form1_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 	};
 }

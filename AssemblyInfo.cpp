@@ -6,12 +6,12 @@ using namespace System::Runtime::CompilerServices;
 using namespace System::Runtime::InteropServices;
 using namespace System::Security::Permissions;
 
-[assembly:AssemblyTitleAttribute(L"CppCLRWinFormsProject")];
+[assembly:AssemblyTitleAttribute(L"Simple Audio Player")];
 [assembly:AssemblyDescriptionAttribute(L"")];
 [assembly:AssemblyConfigurationAttribute(L"")];
 [assembly:AssemblyCompanyAttribute(L"")];
-[assembly:AssemblyProductAttribute(L"CppCLRWinFormsProject")];
-[assembly:AssemblyCopyrightAttribute(L"Copyright (c)  2022")];
+[assembly:AssemblyProductAttribute(L"SAP")];
+[assembly:AssemblyCopyrightAttribute(L"Copyright (c)  2024")];
 [assembly:AssemblyTrademarkAttribute(L"")];
 [assembly:AssemblyCultureAttribute(L"")];
 

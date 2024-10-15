@@ -39,7 +39,7 @@ void LRCService::Lyrics::updateActives(Int64 currentMilisecond, System::Windows:
 {
 	if (isSynced && lstViewTarget->Items->Count == LRCArray->Count)
 	{
-		//We need to loop the entire array in reverse (Not sure why intellisense is crying here tbh)
+		//Reverse loop
 		for (int i = LRCArray->Count - 1; i >= 0; i--)
 		{
 			//Is the miliseconds of the current item are LESS OR EQUAL than the current miliseconds then we assign that element to active

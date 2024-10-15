@@ -71,6 +71,14 @@ SAP::File::File(String^ filePath)
 
 }
 
+SAP::File::~File()
+{
+	delete title;
+	delete artist;
+	delete album;
+	delete filePath;
+}
+
 System::String^ SAP::File::getArtist()
 {
 	return artist;
