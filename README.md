@@ -12,7 +12,7 @@ Note: You dont need to build and link these dependencies, see below.
 1. First make sure you have the "Desktop developement with C++" package selected in VS's installer options
 2. **If you dont want to manually compile and link TagLib**, also make sure to check "vcpkg project manager" component in VS's installer
 3. After download and installing, clone and open this project with Visual Studio
-4. If this is your first time using vcpkg, you may need to run "vcpkg install integration" in the developer terminal (go to View -> Terminal if you dont see it)
+4. If this is your first time using vcpkg, you may need to run "vcpkg integrate install" in the developer terminal (go to View -> Terminal if you dont see it)
 5. Run "vcpkg install" to install and link TagLib
 6. Now at this moment you should be all set, try to run the app with the "Local Windows Debugger" button
 7. Enjoy :)
