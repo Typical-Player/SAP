@@ -8,14 +8,13 @@ Simple audio player written in C++/CLI using Windows Forms for GUI
 Note: You dont need to build and link these dependencies, see below.
 
 # Building (Windows)
-First you're gonna need vcpkg to install and link the dependencies (Miniaudio and TagLib), technically you could also build and link yourself but this way is easier (and also I havent tested that last bit).
-The easiest way to use vcpkg is to use the copy that comes by default with Visual Studio (I use 2022) and making sure you're installing the vcpkg component (It should be enabled by default when you select "Desktop developement with C++" in the installer settings, but just to be sure check if the "vcpkg project manager" component is checked)
-
-Then clone this project and run "vcpkg install" on the developer terminal, note that probably you will also need to run the vcpkg configuration (I dont know if its needed since this project also contains the vcpkg's manifest file, but just a heads up)
-
-After that, vcpkg will download and compile required files for both miniaudio and TagLib, linking should be handled by Visual Studio automatically
-
-Lastly simply compile and run the app :)
+1. First make sure you have the "Desktop developement with C++" package selected in VS's installer options
+2. **If you dont want to manually compile and link TagLib**, also make sure to check "vcpkg project manager" component in VS's installer
+3. After download and installing, clone and open this project with Visual Studio
+4. If this is your first time using vcpkg, you may need to run "vcpkg install integration" in the developer terminal (go to View -> Terminal if you dont see it)
+5. Run "vcpkg install" to install and link TagLib
+6. Now at this moment you should be all set, try to run the app with the "Local Windows Debugger" button
+7. Enjoy :)
 
 # Usage
 Open the app and go to File > Quick Import and select a folder that contains your music files
