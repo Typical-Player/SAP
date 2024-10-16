@@ -1,4 +1,7 @@
 #pragma once
+#ifndef _LYRICSLINE_H_
+#define _LYRICSLINE_H_
+
 namespace LRCService {
 	using namespace System;
 	ref class LyricsLine
@@ -22,3 +25,4 @@ namespace LRCService {
 	};
 }
 
+#endif // !_LYRICSLINE_H_

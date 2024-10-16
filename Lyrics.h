@@ -1,5 +1,8 @@
 #pragma once
+#ifndef _LYRICS_H_
+#define _LYRICS_H_
 #include "LyricsLine.h"
+
 namespace LRCService {
 	using namespace System;
 	ref class Lyrics
@@ -29,3 +32,4 @@ namespace LRCService {
 	};
 }
 
+#endif // !_LYRICS_H_

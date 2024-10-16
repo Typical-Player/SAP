@@ -1,5 +1,8 @@
 #pragma once
+#ifndef _FILE_H_
+#define _FILE_H_
 #include "Lyrics.h"
+
 namespace SAP {
 	using namespace System;
 	ref class File
@@ -41,13 +44,9 @@ namespace SAP {
 
 		String^ getFilePath();
 		String^ getDetailedInfo();
-
 		System::Drawing::Image^ tryGetImage();
-
 		bool getIsValid();
-
 		void getLyricsSynced(LRCService::Lyrics^ lyricsObj);
-
 		String^ ToString() override;
 
 	private:
@@ -63,3 +62,4 @@ namespace SAP {
 	};
 }
 
+#endif // !_FILE_H_
