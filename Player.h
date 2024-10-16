@@ -3,7 +3,7 @@
 #define _PLAYER_H_
 
 #define MINIAUDIO_IMPLEMENTATION
-#include "miniaudio.h"
+#include "Miniaudio.h"
 #include <msclr/marshal_cppstd.h>
 
 namespace SAP {

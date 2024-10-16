@@ -1,6 +1,5 @@
 {
   "dependencies": [
-    "taglib",
-    "miniaudio"
+    "taglib"
   ]
 }
